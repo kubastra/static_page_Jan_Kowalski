@@ -1,0 +1,165 @@
+/* Podstawy */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f3f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+header {
+  background: linear-gradient(135deg, #4e79ff, #71a4ff);
+  color: white;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile toggle */
+.mobile-nav-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+.main-content {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 25px auto;
+}
+
+/* Sidebar */
+.sidebar {
+  background: white;
+  padding: 20px;
+  flex: 0 0 260px; /* ogarnac */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Content box */
+.content {
+  flex: 1; /*wypelniacz*/
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ========================= */
+/* IMAGES */
+/* ========================= */
+.images-row {
+  display: flex; /*obok siebi, przerawa */
+  gap: 12px;
+}
+
+.images-row img {
+  width: 33%;
+  border-radius: 10px;
+  height: 160px;
+  object-fit: cover;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+ 
+}
+
+.images-row img:hover {
+  transform: scale(1.04);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+.site-footer {
+  margin-top: 40px;
+  background: #4e79ff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer-nav a {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+}
+
+
+
+/* ========================= */
+/* RESPONSYWNOŚĆ */
+/* ========================= */
+@media(max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 650px) {
+  .site-nav {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .site-nav.open {
+    display: block;
+    position: absolute;
+    background: #4e79ff;
+    top: 80px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .images-row {
+    flex-direction: column;
+  }
+
+  .images-row img {
+    width: 100%;
+  }
+}

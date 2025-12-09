@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jan Kowalski — Strona Główna</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Jan Kowalski</h1>
+    <p>Programista, pasjonat technologii i podróży</p>
+  </div>
+  <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-expanded="false">☰</button> 
+  <nav class="site-nav" id="site-nav">
+    <ul>
+      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="about.html">O mnie</a></li>
+      <li><a href="services.html">Usługi</a></li>
+      <li><a href="gallery.html">Galeria</a></li>
+      <li><a href="table.html">Tabela</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main-content">
+  <aside class="sidebar">
+    <section>
+      <h2>Informacje</h2>
+      <p>Cześć! Jestem Jan — tworzę strony WWW i aplikacje.</p>
+    </section>
+    <section>
+      <h3>Kontakt</h3>
+      <address>
+        e-mail: <a href="mailto:jan.kowalski@example.com">jan.kowalski@example.com</a><br>
+        Kraków, Polska
+      </address>
+    </section>
+  </aside>
+
+  <article class="content">
+    <section class="hero">
+      <h2>Witaj na mojej stronie</h2>
+      <p>Ta witryna powstała jako projekt demonstracyjny. Znajdziesz tu informacje o mnie, moje przykładowe projekty oraz galerię zdjęć.</p>
+    </section>
+
+    <section>
+      <h3>Co tu znajdziesz?</h3>
+      <ul>
+        <li>Moje portfolio i przykładowe usługi</li>
+        <li>Tabelę z przykładowymi danymi</li>
+        <li>Galeria zdjęć</li>
+        <li>Blog z krótkimi artykułami</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Przykładowe grafiki</h3>
+      <div class="images-row">
+        <img src="images/photo1.jpg" />
+        <img src="images/photo2.jpg"/>
+        <img src="images/photo3.jpg"/>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <nav>
+    <ul> <!--wywalic ul bo jest jeden element-->
+      <li><a href="sitemap.html">Mapa strony</a></li>
+    </ul>
+  </nav>
+  <p>© 2025 Jan Kowalski</p>
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('mobile-nav-toggle');
+  const nav = document.getElementById('site-nav');
+  btn.addEventListener('click', ()=> {
+    const expanded = btn.getAttribute('aria-expanded') === 'true'; /* sprawdzamy czy rozwinięte*/
+    btn.setAttribute('aria-expanded', String(!expanded)); /*zmiana na rozwiniete lub nie */
+    nav.classList.toggle('open'); 
+  });
+})();
+</script>
+
+</body>
+</html>
